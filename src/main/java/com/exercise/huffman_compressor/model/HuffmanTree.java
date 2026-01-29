@@ -1,6 +1,7 @@
 package com.exercise.huffman_compressor.model;
 
 import lombok.Builder;
+import lombok.NonNull;
 import lombok.Value;
 import lombok.With;
 
@@ -12,7 +13,7 @@ import java.util.Map;
 @Builder
 public class HuffmanTree {
 
-    HuffmanNode root;
+    @NonNull HuffmanNode root;
 
     public Map<Character, String> buildCodeTable() {
         Map<Character, String> table = new HashMap<>();
@@ -20,7 +21,7 @@ public class HuffmanTree {
         return table;
     }
 
-    private void buildRecursive(HuffmanNode node, String code, Map<Character, String> table) {
+    private void buildRecursive(@NonNull HuffmanNode node, @NonNull String code, @NonNull Map<Character, String> table) {
         if (node.isLeaf()) {
             table.put(node.getCharacter(), code.isEmpty() ? "0" : code);
             return;

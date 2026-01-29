@@ -3,16 +3,17 @@ package com.exercise.huffman_compressor.model;
 import lombok.Builder;
 import lombok.Value;
 import lombok.With;
+import org.jetbrains.annotations.Nullable;
 
 @With
 @Value
 @Builder
 public class HuffmanNode implements Comparable<HuffmanNode> {
 
-    Character character;
+    @Nullable Character character;
     int frequency;
-    HuffmanNode left;
-    HuffmanNode right;
+    @Nullable HuffmanNode left;
+    @Nullable HuffmanNode right;
 
     public boolean isLeaf() {
         return left == null && right == null;
