@@ -1,3 +1,6 @@
 spring:
   application:
     name: huffman-compressor
+
+huffman-compressor:
+  implementation: SIMPLE
